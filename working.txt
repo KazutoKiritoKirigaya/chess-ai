@@ -1,5 +1,5 @@
-48:56 / 5:37:16
+2:09:33 / 5:37:16
 
-piece.py
+board.py
 
 https://www.youtube.com/watch?v=OpL0Gcfn4B4
