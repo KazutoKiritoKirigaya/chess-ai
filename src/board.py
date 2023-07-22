@@ -16,6 +16,49 @@ class Board:
         self._add_pieces("white")
         self._add_pieces("black")
 
+    def calc_moves(self, piece, row, col):
+        """
+        Calculates all of the possible (valid) moves a piece at a specific position can make.
+        """
+
+        def knight_moves():
+            # A maximum of 8 moves are possible
+            possible_moves = [
+                (row -2, col +1),
+                (row -1, col +2),
+                (row +1, col +2),
+                (row +2, col +1),
+                (row +2, col -1),
+                (row +1, col -2),
+                (row -1, col -2),
+                (row -2, col -1),
+            ]
+
+            for possible_move in possible_moves:
+                possible_move_row, possible_move_col = possible_move
+                if Square.in_range(possible_move_row, possible_move_col): # Checks whether the move is actually on the board or not with regards to the Knight's current position.
+                    if self.squares[possible_move_row][possible_move_col].isempty_or_rival(piece.colour):
+                        # Create a new move
+                        pass
+        
+        if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
+            pass
+
+        elif isinstance(piece, Knight):
+            knight_moves()
+
+        elif isinstance(piece, Bishop):
+            pass
+
+        elif isinstance(piece, Rook):
+            pass
+
+        elif isinstance(piece, Queen):
+            pass
+
+        elif isinstance(piece, King):
+            pass
+
     # The _ shows that these are "private" methods.
     def _create(self):
         for row in range(ROWS):
