@@ -22,6 +22,38 @@ class Board:
         Calculates all of the possible (valid) moves a piece at a specific position can make.
         """
 
+        def pawn_moves():
+            steps = 1 if piece.moved else 2 # Pawns can move 2 squares if this is their first move in the game.
+
+            # Vertical movement
+            start = row + piece.dir
+            end = row + (piece.dir * (1 + steps))
+            for move_row in range(start, end, piece.dir):
+                if Square.in_range(move_row):
+                    if self.squares[move_row][col].isempty():
+                        # Create initial and final move squares.
+                        initial = Square(row, col)
+                        final = Square(move_row, col)
+                        # Create a new move
+                        move = Move(initial, final)
+                        piece.add_move(move) # Append new move
+                    else: # The Pawn's path is blocked. 
+                        break
+                else: break
+            # Diagonal movement
+            possible_move_row = row + piece.dir
+            possible_move_cols = [col -1, col +1]
+            for possible_move_col in possible_move_cols:
+                if Square.in_range(possible_move_row, possible_move_col):
+                    if self.squares[possible_move_row][possible_move_col].has_rival_piece(piece.colour):
+                        # Create initial and final move squares.
+                        initial = Square(row, col)
+                        final = Square(possible_move_row, possible_move_col)
+                        # Create a new move 
+                        move = Move(initial, final)
+                        # Append new move
+                        piece.add_move(move)
+
         def knight_moves():
             # A maximum of 8 moves are possible
             possible_moves = [
@@ -48,7 +80,7 @@ class Board:
                         piece.add_move(move)
         
         if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
-            pass
+            pawn_moves()
 
         elif isinstance(piece, Knight):
             knight_moves()
