@@ -8,6 +8,7 @@ and the _add_pieces() method places the pieces (pawns, knights, bishops, rooks, 
 from const import *
 from square import Square
 from piece import *
+from move import Move
 
 class Board:
     def __init__(self):
@@ -38,8 +39,13 @@ class Board:
                 possible_move_row, possible_move_col = possible_move
                 if Square.in_range(possible_move_row, possible_move_col): # Checks whether the move is actually on the board or not with regards to the Knight's current position.
                     if self.squares[possible_move_row][possible_move_col].isempty_or_rival(piece.colour):
-                        # Create a new move
-                        pass
+                        # Creates the squares of the new moves.
+                        initial = Square(row, col)
+                        final = Square(possible_move_row, possible_move_col) # Piece = piece
+                        # Creates a new move
+                        move = Move(initial, final)
+                        # Append new valid move
+                        piece.add_move(move)
         
         if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
             pass
