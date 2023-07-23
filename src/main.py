@@ -41,14 +41,15 @@ class Main:
                     # Checks whether the square the user clicked on has a piece or not. 
                     if board.squares[clicked_row][clicked_col].has_piece():
                         piece = board.squares[clicked_row][clicked_col].piece
-                        board.calc_moves(piece, clicked_row, clicked_col)
-                        dragger.save_initial(event.pos)
-                        dragger.drag_piece(piece) 
-
-                        # Show methods
-                        game.show_bg(screen)
-                        game.show_moves(screen)
-                        game.show_pieces(screen)
+                        # Checks if the piece is the right colour for that specific move
+                        if piece.colour == game.next_player:        
+                            board.calc_moves(piece, clicked_row, clicked_col)
+                            dragger.save_initial(event.pos)
+                            dragger.drag_piece(piece) 
+                            # Show methods
+                            game.show_bg(screen)
+                            game.show_moves(screen)
+                            game.show_pieces(screen)
 
                 # Mouse motion
                 elif event.type == pygame.MOUSEMOTION:
@@ -78,6 +79,9 @@ class Main:
                             # Show methods
                             game.show_bg(screen)
                             game.show_pieces(screen)
+
+                            # It's the other player's turn
+                            game.next_turn()
 
                     dragger.undrag_piece()
 
