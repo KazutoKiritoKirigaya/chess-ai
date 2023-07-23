@@ -21,28 +21,28 @@ class Piece:
     def clear_moves(self):
         self.moves = []
 
-class Pawn(Piece):
+class Pawn(Piece): # The Pawn, the humble foot soldier of the chessboard.
     def __init__(self, colour):
         self.dir = -1 if colour == "white" else 1
         super().__init__("pawn", colour, 1.0)
 
-class Knight(Piece):
+class Knight(Piece): # Behold the Knight, the epitome of grace and swiftness (supposedly so, L shape go brr).
     def __init__(self, colour):
         super().__init__("knight", colour, 3.0)
 
-class Bishop(Piece):
+class Bishop(Piece): # Unleash your inner light! [NGNL]
     def __init__(self, colour):
         super().__init__("bishop", colour, 3.001)
 
 class Rook(Piece):
-    def __init__(self, colour):
+    def __init__(self, colour): # Lazuli, herald of the order
         super().__init__("rook", colour, 5.0)
 
-class Queen(Piece):
+class Queen(Piece): # Long live the Queen!
     def __init__(self, colour):
         super().__init__("queen", colour, 9.0)
 
-class King(Piece):
+class King(Piece): # The King, the immortal monarch at the heart of this grand chess symphony. I know, I'm like Shakespeare...
     def __init__(self, colour):
         self.left_rook = None
         self.right_rook = None
