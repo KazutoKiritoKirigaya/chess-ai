@@ -1,9 +1,10 @@
 
 class Move:
-    def __init__(self, initial, final):
+    def __init__(self, initial, final): # I shall deign to share this dance with you.
         # initial and final are squares, not tuples.
         self.initial = initial
         self.final = final
+
     def __str__(self):
         s = ""
         s += f"({self.initial.col}, {self.initial.row})"

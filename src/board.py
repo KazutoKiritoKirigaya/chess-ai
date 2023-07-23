@@ -26,6 +26,14 @@ class Board:
         self.squares[initial.row][initial.col].piece = None
         self.squares[final.row][final.col].piece = piece
 
+        # Pawn promotion 
+        if isinstance(piece, Pawn): 
+            """
+            To the world, you are invisible - it never stops to notice you.
+            So you stand up, you leap, twirl, and show them, through a most-exquisite transition.
+            """
+            self.check_promotion(piece, final)
+
         # Move
         piece.moved = True
 
@@ -35,8 +43,13 @@ class Board:
         # Set last move
         self.last_move = move
 
-    def valid_move(self, piece, move):
+    # Is the move even real? Or is it just a fantasy?
+    def valid_move(self, piece, move): 
         return move in piece.moves
+
+    def check_promotion(self, piece, final):
+        if final.row == 0 or final.row == 7:
+            self.squares[final.row][final.col].piece = Queen(piece.colour)
 
     def calc_moves(self, piece, row, col):
         """

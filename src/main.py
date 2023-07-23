@@ -83,10 +83,10 @@ class Main:
 
                         # Check if this is a valid move
                         if board.valid_move(dragger.piece, move):
-                            captured = board.squares[released_row][released_col].has_piece()
+                            captured = board.squares[released_row][released_col].has_piece() # Quiet whispers grow into a chorus of cheers...
                             board.move(dragger.piece, move)
                             # Sounds
-                            game.sound_effect(captured)
+                            game.sound_effect(captured) # To make ripples in your audience's hearts...
                             # Show methods
                             game.show_bg(screen)
                             game.show_last_move(screen)
