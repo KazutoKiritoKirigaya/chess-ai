@@ -1,6 +1,6 @@
 # Chess AI
 
-This is a chess AI game developed utilising the Pygame library in Python. The game boasts a graphical chessboard where players can engage in matches against an AI opponent that employs simple chess logic.
+This is a AI Chess game developed using the Pygame library in Python. The game boasts a graphical chessboard where players can engage in matches against an AI opponent that employs simple chess logic.
 
 ## Table of Contents
 
