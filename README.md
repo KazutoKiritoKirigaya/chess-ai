@@ -18,11 +18,11 @@ This is an implementation of the game of Chess with a simple AI player. The game
 ## Features
 
 -   Graphical chessboard with intuitive controls
--   Single-player mode with an AI opponent
+-   Two-player mode
 -   Easy-to-use interface and gameplay
--   AI player utilizes simple chess logic
+-   AI player for single-player mode, which utilises simple chess logic
 -   A plethora of themes
--   Recognises the castling and en passant moves as valid
+-   Recognises castling moves as valid
 
 ## Installation
 
@@ -45,7 +45,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 2. Run the following command to start the Chess AI game:
 
     ```bash
-    python main.py
+    python src/main.py
     ```
 
 3. The game window will open, showing the chessboard and pieces.
@@ -59,6 +59,8 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   **Right Click:** Deselect a piece (unselect the current selection).
 
 -   **"T" key:** Changes the board theme.
+
+-   **"R" key:** Restarts the game.
 
 ## AI Logic
 
