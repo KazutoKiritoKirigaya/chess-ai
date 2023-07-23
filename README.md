@@ -21,6 +21,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   Single-player mode with an AI opponent
 -   Easy-to-use interface and gameplay
 -   AI player utilizes simple chess logic
+-   A plethora of themes
 
 ## Installation
 
@@ -55,7 +56,10 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   **Mouse Click:** Select a chess piece and move it by dragging it to the desired square.
 
 -   **Right Click:** Deselect a piece (unselect the current selection).
-    AI Logic
+
+-   **"T" key** Changes the board theme.
+
+## AI Logic
 
 -   The AI opponent in this chess game uses a simple heuristic-based approach for its moves. It evaluates the board state for all possible moves and selects the move that maximizes its chances of winning while minimizing the opponent's winning chances.
 
