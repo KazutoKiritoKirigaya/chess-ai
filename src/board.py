@@ -79,6 +79,46 @@ class Board:
                         # Append new valid move
                         piece.add_move(move)
         
+        def straightline_moves(incrs):
+            for incr in incrs:
+                row_incr, col_incr = incr
+                possible_move_row = row + row_incr
+                possible_move_col = col + col_incr
+
+                while True:
+                    if Square.in_range(possible_move_row, possible_move_col):
+                        initial = Square(row, col)
+                        final_piece = self.squares[possible_move_row][possible_move_col].piece
+                        final = Square(possible_move_row, possible_move_col, final_piece)
+                        move = Move(initial, final)
+
+                        if self.squares[possible_move_row][possible_move_col].isempty():
+                            if bool:
+                                piece.add_move(move)
+                            else:
+                                piece.add_move(move)
+
+                        # Has enemy piece = add move + break
+                        elif self.squares[possible_move_row][possible_move_col].has_rival_piece(piece.colour):
+                            if bool:
+                                piece.add_move(move)
+                                pass
+                            else:
+                                piece.add_move(move)
+                            break
+
+                        elif self.squares[possible_move_row][possible_move_col].has_team_piece(piece.colour):
+                            break
+                    
+                    else: break
+
+                    # Incrementing the increments
+                    possible_move_row = possible_move_row + row_incr
+                    possible_move_col = possible_move_col + col_incr
+
+        def king_moves():
+            pass
+
         if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
             pawn_moves()
 
@@ -86,16 +126,36 @@ class Board:
             knight_moves()
 
         elif isinstance(piece, Bishop):
-            pass
+            straightline_moves([
+                (-1, 1), # Upper right 
+                (-1, -1), # Upper left
+                (1, 1), # Down right 
+                (1, -1) # Down left
+            ])
 
         elif isinstance(piece, Rook):
-            pass
+            straightline_moves([
+                (-1, 0), # Upward
+                (0, 1), # Leftward
+                (1, 0), # Downwards
+                (0, -1) # Rightwards
+
+            ])
 
         elif isinstance(piece, Queen):
-            pass
+            straightline_moves([
+                (-1, 1),  
+                (-1, -1),
+                (1, 1), 
+                (1, -1), 
+                (-1, 0), 
+                (0, 1), 
+                (1, 0), 
+                (0, -1)
+            ])
 
         elif isinstance(piece, King):
-            pass
+            king_moves()
 
     # The _ shows that these are "private" methods.
     def _create(self):
