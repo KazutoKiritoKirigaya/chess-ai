@@ -117,7 +117,27 @@ class Board:
                     possible_move_col = possible_move_col + col_incr
 
         def king_moves():
-            pass
+            adjs = [
+                (row -1, col +0), # Upwards
+                (row -1, col +1), # Upper right
+                (row +0, col +1), # Right
+                (row +1, col +1), # Down right
+                (row +1, col +0), # Downwards
+                (row +1, col -1), # Down left
+                (row +0, col -1), # Left
+                (row -1, col -1), # Upper left  
+            ]
+
+            # Standard king moves
+            for possible_move in adjs:
+                possible_move_row, possible_move_col = possible_move
+
+                if Square.in_range(possible_move_row, possible_move_col):
+                    if self.squares[possible_move_row][possible_move_col].isempty_or_rival(piece.colour):
+                        initial = Square(row, col)
+                        final = Square(possible_move_row, possible_move_col)
+                        move = Move(initial, final)
+                        piece.add_move(move)
 
         if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
             pawn_moves()
