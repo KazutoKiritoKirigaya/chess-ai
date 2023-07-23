@@ -18,6 +18,9 @@ class Piece:
     def add_move(self, move):
         self.moves.append(move)
 
+    def clear_moves(self):
+        self.moves = []
+
 class Pawn(Piece):
     def __init__(self, colour):
         self.dir = -1 if colour == "white" else 1

@@ -13,9 +13,30 @@ from move import Move
 class Board:
     def __init__(self):
         self.squares = [[0,0,0,0,0,0,0,0] for col in range(COLS)] # Creating a 2D list of eight 0s for each column. 
+        self.last_move = None
         self._create() # Filling the board with square objects
         self._add_pieces("white")
         self._add_pieces("black")
+
+    def move(self, piece, move):
+        initial = move.initial
+        final = move.final
+
+        # Console board move updates
+        self.squares[initial.row][initial.col].piece = None
+        self.squares[final.row][final.col].piece = piece
+
+        # Move
+        piece.moved = True
+
+        # Clear valid moves.
+        piece.clear_moves()
+
+        # Set last move
+        self.last_move = move
+
+    def valid_move(self, piece, move):
+        return move in piece.moves
 
     def calc_moves(self, piece, row, col):
         """
