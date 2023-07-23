@@ -229,7 +229,7 @@ class Board:
                                 initial = Square(row, col)
                                 final = Square(row, 6)
                                 move = Move(initial, final)
-                                right_rook.add_move(move)
+                                piece.add_move(move)
 
         if isinstance(piece, Pawn): # Basically checks if the piece is an instance of the Pawn class.
             pawn_moves()
