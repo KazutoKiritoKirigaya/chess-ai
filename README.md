@@ -22,6 +22,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   Easy-to-use interface and gameplay
 -   AI player utilizes simple chess logic
 -   A plethora of themes
+-   Recognises the castling and en passant moves as valid
 
 ## Installation
 
