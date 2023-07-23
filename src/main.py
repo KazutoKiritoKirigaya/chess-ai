@@ -102,6 +102,9 @@ class Main:
                     # For changing themes
                     if event.key == pygame.K_t:
                         game.change_theme()
+                    
+                    elif event.key == pygame.K_r:
+                        game.reset()
 
                 # Quit the application
                 elif event.type == pygame.QUIT:
