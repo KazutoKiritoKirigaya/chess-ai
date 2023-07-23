@@ -57,7 +57,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 
 -   **Right Click:** Deselect a piece (unselect the current selection).
 
--   **"T" key** Changes the board theme.
+-   **"T" key:** Changes the board theme.
 
 ## AI Logic
 
