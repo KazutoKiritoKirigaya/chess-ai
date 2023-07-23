@@ -110,5 +110,5 @@ class Game:
         else:
             self.config.move_sound.play()
 
-    def reset(self):
+    def reset(self): # That which thou seeketh hath now been bestowed unto thee, for my promise stands as solid as stone.
         self.__init__()
