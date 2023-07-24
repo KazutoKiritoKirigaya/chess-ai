@@ -21,7 +21,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   Two-player mode
 -   Easy-to-use interface and gameplay
 -   AI player for single-player mode, which utilises simple chess logic
--   A plethora of themes
+-   A plethora of themes [green, brown, blue, grey, pink]
 -   Recognises castling moves as valid
 
 ## Installation
