@@ -56,4 +56,16 @@ This is a Chess game developed using the Pygame library in Python. The game boas
 
 -   **"R" key:** Restarts the game.
 
+
+## File Structure
+
+- **`game.py`**: Manages game state.
+- **`main.py`**: Runs the game loop.
+- **`board.py`**: Handles the board and pieces.
+- **`dragger.py`**: Manages piece dragging.
+- **`square.py`**: Defines board squares.
+- **`move.py`**: Manages moves.
+- **`config.py`**: Configures themes and sounds.
+- **`const.py`**: Contains constants.
+
 Enjoy playing Chess and have fun! If you encounter any issues or have suggestions for improvements, feel free to open an issue or create a pull request. **Buena suerte!**
