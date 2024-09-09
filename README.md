@@ -1,4 +1,4 @@
-# Chess AI
+# Scholar's Mate
 
 This is a Chess game developed using the Pygame library in Python. The game boasts a graphical chessboard where players can engage in 1v1 "pass'n play" matches.
 
