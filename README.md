@@ -1,6 +1,6 @@
 # Chess AI
 
-This is a AI Chess game developed using the Pygame library in Python. The game boasts a graphical chessboard where players can engage in matches against an AI opponent that employs simple chess logic.
+This is a Chess game developed using the Pygame library in Python. The game boasts a graphical chessboard where players can engage in 1v1 "pass'n play" matches.
 
 ## Table of Contents
 
@@ -9,7 +9,6 @@ This is a AI Chess game developed using the Pygame library in Python. The game b
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Game Controls](#game-controls)
--   [AI Logic](#ai-logic)
 
 ## Introduction
 
@@ -20,7 +19,6 @@ This is an implementation of the game of Chess with a simple AI player. The game
 -   Graphical chessboard with intuitive controls
 -   Two-player mode
 -   Easy-to-use interface and gameplay
--   AI player for single-player mode, which utilises simple chess logic
 -   A plethora of themes [green, brown, blue, grey, pink]
 -   Recognises castling moves as valid
 
@@ -42,7 +40,7 @@ This is an implementation of the game of Chess with a simple AI player. The game
 
 1. After completing the installation steps, navigate to the project directory in a terminal.
 
-2. Run the following command to start the Chess AI game:
+2. Run the following command to start the Chess game:
 
     ```bash
     python src/main.py
@@ -62,8 +60,4 @@ This is an implementation of the game of Chess with a simple AI player. The game
 
 -   **"R" key:** Restarts the game.
 
-## AI Logic
-
--   The AI opponent in this chess game uses a simple heuristic-based approach for its moves. It evaluates the board state for all possible moves and selects the move that maximizes its chances of winning while minimizing the opponent's winning chances.
-
-Enjoy playing Chess and have fun challenging the AI opponent! If you encounter any issues or have suggestions for improvements, feel free to open an issue or create a pull request. **Buena suerte!**
+Enjoy playing Chess and have fun! If you encounter any issues or have suggestions for improvements, feel free to open an issue or create a pull request. **Buena suerte!**
