@@ -4,15 +4,11 @@ This is a Chess game developed using the Pygame library in Python. The game boas
 
 ## Table of Contents
 
--   [Introduction](#introduction)
 -   [Features](#features)
 -   [Installation](#installation)
 -   [Usage](#usage)
 -   [Game Controls](#game-controls)
 
-## Introduction
-
-This is an implementation of the game of Chess with a simple AI player. The game provides an interactive graphical interface built using Pygame.
 
 ## Features
 
